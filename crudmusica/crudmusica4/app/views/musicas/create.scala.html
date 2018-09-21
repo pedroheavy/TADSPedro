@@ -1,0 +1,22 @@
+@(formMusica: Form[Musica])
+
+@import helper._
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Nova Musica</h1>
+
+	@form(action=routes.MusicaController.save){
+	@helper.inputText(formMusica("id"))
+	@helper.inputText(formMusica("nome"))
+	@helper.inputText(formMusica("compositor"))
+	@helper.inputText(formMusica("album"))
+	<button action="submit">Criar</button>
+}
+
+</body>
+</html>

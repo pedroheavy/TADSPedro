@@ -1,0 +1,31 @@
+@(musicas: Set[Musica])
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Todas as Musicas</h1>
+    <form action="@routes.MusicaController.create">
+      <button type="submit">Inserir</button>
+    </form>
+    <table border="1">
+      <tr>
+        <td>ID</td>
+        <td>Nome</td>
+        <td>Compositor</td>
+        <td>Album</td>
+      </tr>
+        @for(musica <- musicas){
+        <tr>
+          <td><a href="@routes.MusicaController.show(musica.getId())">@musica.id</a></td>
+          <td>@musica.nome</td>
+          <td>@musica.compositor</td>
+          <td>@musica.album</td>
+          <td><a href="@routes.MusicaController.destroy(musica.getId())">Excluir</a></td>
+        </tr>
+      }
+    </table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+# An example controller showing a sample home page
+
+
+GET     /musicas             controllers.MusicaController.index
+GET     /musicas/edit/:id    controllers.MusicaController.edit(id: Integer)
+POST    /musicas/edit        controllers.MusicaController.update
+GET     /musicas/create      controllers.MusicaController.create
+GET     /musicas/:id         controllers.MusicaController.show(id: Integer)
+POST    /musicas/create      controllers.MusicaController.save
+GET     /musicas/delete/:id  controllers.MusicaController.destroy(id: Integer)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

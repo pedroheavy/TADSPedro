@@ -1,0 +1,15 @@
+@(musica: Musica)
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>@musica.nome</h1>
+	<p>Nome: @musica.nome</p>
+	<p>Compositor: @musica.compositor</p>
+	<p>Album: @musica.album</p>
+	<form action="@routes.MusicaController.edit(musica.getId())">Editar</form>
+
+</body>
+</html>
